@@ -41,6 +41,7 @@ This space serves as a centralized location to gather resources, document learni
 
 GyuJin Lee - [GitHub Profile](https://github.com/JinLeeGG)
 
-## License
+## License Information
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+- The **code** in this repository is licensed under the [MIT License](LICENSE), meaning you are free to use, modify, and distribute it with attribution.
+- The **notes and written content** are licensed under [Creative Commons Attribution 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). This means you may share and adapt them, as long as you provide proper credit.
