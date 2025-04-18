@@ -1,1 +1,1 @@
-# AI_Project_with_OpenCV
+# AI_Project_Preperation
