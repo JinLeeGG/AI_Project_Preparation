@@ -8,7 +8,7 @@ This space serves as a centralized location to gather resources, document learni
 
 ## Curriculum (Monthly Progress)
 
-1. **Python Fundamentals** (파이썬 기초)
+1. **Python Basics** (파이썬 기초)
 2. **Python Web Development and LLM Basics** (파이썬 웹과 LLM 기초)
 3. **Data Analysis and Machine Learning** (데이터 분석과 머신러닝)
 4. **Deep Learning and Its Applications** (딥러닝 딥러닝 활용)
