@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from bson import ObjectId
 
-url = 'mongodb+srv://aiproject:MkFAAzdKquhP3hph@cluster0.arbx7wl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+url = 'mongoDB url here'
 
 client = MongoClient(url)
 
