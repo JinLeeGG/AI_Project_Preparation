@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from bson import ObjectId
 
-url = 'mongoDB url here'
+url = 'mongodb+srv://aiproject:MkFAAzdKquhP3hph@cluster0.arbx7wl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
 client = MongoClient(url)
 
@@ -54,6 +54,22 @@ def rate_food(user_id):
 	})
 	print('평점이 등록되었습니다.')
 
+# 평점 수정
+def update_rating(user_id):
+	print("\n내 리뷰 목록: ")
+	for r in ratings.find({"user_id" : user_id}): #ratings collections 안에서 user_id가 뭔지 찾아준다.
+		food = foods.find_one({"_id" : r["food_id"]}) # id가 작성한 food id를 찾는다.
+		print(f" - ({r['_id']}) {food['name']}: {r['score']}점 | {r['comment']}")
+	
+	rating_id = input('수정할 리뷰 ID 입력: ')
+	new_score = float(input("새 평점: "))
+	new_comment = input("새 리뷰: ")
+	ratings.update_one(
+		{"_id": ObjectId(rating_id)},
+		{"$set": {"score": new_score, "comment": new_comment}}
+	)
+	print("리뷰가 수정되었습니다.")
+
 # 특정 음식 리뷰 보기
 def show_food_reviews():
 	show_foods()
@@ -62,6 +78,20 @@ def show_food_reviews():
 	for r in ratings.find({"food_id" : ObjectId(food_id)}): # 하나 또는 이상의 아이디에대한 리뷰를 다 꺼내온다
 		user = users.find_one({"_id" : r["user_id"]}) # 그 리뷰남긴 사람을 가져온다.
 		print(f"- {user['username']} 님: {r['score']}점 | \"{r['comment']}\"")
+
+# 평점 높은 음식 Top3
+def show_best_foods():
+	print("\n 별점이 높은 음식 Top 3:")
+	pipline = [
+		# food id로 그룹을 맺고(같은 음식의 평가) 평균을 구한다.
+		{"$group": {"_id": "$food_id", "avg": {"$avg":"$score"}}},
+		{"$sort": {"avg":-1}},
+		{"$limit": 3}
+	]
+	results = ratings.aggregate(pipline)
+	for r in results:
+		food = foods.find_one({"_id":r["_id"]})
+		print(f" - {food['name']} | 평균 별점: {round(r['avg'], 2)}점")
 
 # 메인 메서드
 def main():
@@ -88,8 +118,12 @@ def main():
 			delete_food()
 		elif choice == "4":
 			rate_food(user_id) # 누가 별점을 썼는지 알기 하기위해 user_id를 넣는다.
+		elif choice == "5":
+			update_rating(user_id)
 		elif choice == "6":
 			show_food_reviews()
+		elif choice == "7":
+			show_best_foods()
 		elif choice == '0':
 			print('안녕히 가세요! 맛있는 하루 되세요!')
 			break
