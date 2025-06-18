@@ -1,2 +1,2 @@
 # Day2 - Pandas (2025/06/18)
-## 2_Pandas.ipynb - class notes
+### 2_Pandas.ipynb - class notes
