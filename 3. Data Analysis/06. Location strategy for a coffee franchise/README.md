@@ -6,5 +6,9 @@ Coffee shop IDIYA Coffee once had a strategy of “defend the seat next to Starb
 
 ## What will we do?
 
-We will web crawl Starbucks and IDIYA Coffee shop locations using Selenium and Folium to verify if this is true.
+We will web crawl Starbucks and other coffee franchise locations using Selenium to verify if this is true.
+
+## Mini-Project Link
+
+https://github.com/JinLeeGG/DataAnalysis_Starbucks/tree/main
 
