@@ -1,4 +1,4 @@
-# Location strategy for a coffee franchise (2025/06/27, 2025/06/30)
+# Location strategy for a coffee franchise (2025/06/27, 2025/06/30, 2025/07/02)
 
 ## Problem 
 
