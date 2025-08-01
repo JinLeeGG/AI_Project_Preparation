@@ -1,4 +1,4 @@
-# Multi-class Weather Dataset (2025/07/30)
+# Multi-class Weather Dataset (2025/07/30, 2025/08/01)
 
 1. 단일 선형 계층 모델
 2. 두 개의 선형 계층 모델
